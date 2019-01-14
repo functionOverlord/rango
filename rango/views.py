@@ -4,11 +4,15 @@ from django.http import HttpResponse
 
 def index(request):
     h = " <a href='/rango/about'>About</a>"
-    return HttpResponse("Rango says hey there partner!" + h)
+
+    context = {'boldmessage': "Crunchy, creamy, cookie, candy, cupcake!"}
+    return render(request, 'rango/index.html', context=context)
 
 
 def about(request):
     h = " <a href='/rango/'>index</a>"
-    return HttpResponse("About" + h)
+
+    context = {}
+    return render(request, 'rango/about.html', context=context)
 
 
