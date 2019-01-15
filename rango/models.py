@@ -2,7 +2,9 @@ from django.db import models
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=128, unique=True)
+    name = models.CharField(max_length=128, unique=True, default=0)
+    views = models.IntegerField(default=0)
+    likes = models.IntegerField(default=0)
 
     class Meta:
         verbose_name_plural = 'Categories'
@@ -12,7 +14,7 @@ class Category(models.Model):
 
 
 class Page(models.Model):
-
+    # cascade is a django 2.1 thing
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     title = models.CharField(max_length=128)
     url = models.URLField()
