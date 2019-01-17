@@ -23,7 +23,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    url('admin/', admin.site.urls),
-    url('rango/', include('rango.urls')),
-    url('', rango_views.index, name='index'),
+    url(r'^admin/', admin.site.urls),
+    url(r'^rango/', include('rango.urls')),
+    url(r'^$', rango_views.index, name='index'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
