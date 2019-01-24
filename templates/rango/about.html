@@ -1,19 +1,11 @@
-<!DOCTYPE html>
-
+{% extends 'rango/base.html' %}
 {% load staticfiles %}
 
-<html lang="en">
+{% block title_block %}
+    About
+{% endblock %}
 
-<head>
-    <meta charset="UTF-8">
-    <title>About</title>
-</head>
-
-<body>
-
-    <a href="/rango/">Ze Index</a><br />
+{% block body_block %}
     <img src="{{MEDIA_URL}}cat.jpg" alt="Picture of Catto" />
-</body>
-
-</html>
+{% endblock %}
 
